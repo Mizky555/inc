@@ -8,10 +8,10 @@ RUN apt update && apt upgrade -y && \
 		-keyout /etc/nginx/ssl/mykey.key \
 		-subj "/C=TH/ST=Bangkok/L=Yannawa/O=42Bkk/OU=student/CN=tsirirak/emailAddress=65420128@kmitl.ac.th"
 
-COPY ./conf/nxconfig.conf /etc/nginx/conf.d/nxconfig.conf
+COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
 
 RUN rm -rf /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
 
-CMD [ "nginx", "-g", "daemon off;" ]
-
 EXPOSE 443
+
+CMD [ "nginx", "-g", "daemon off;" ]

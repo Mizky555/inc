@@ -10,8 +10,8 @@ RUN mkdir -p /var/run/mysqld && \
 
 RUN chmod +x /usr/local/bin/scriptdb.sh
 
+EXPOSE 3306
 
 ENTRYPOINT [ "/usr/local/bin/scriptdb.sh" ]
-CMD [ "/usr/bin/mysqld_safe" ]
 
-EXPOSE 3306
+CMD [ "/usr/bin/mysqld_safe" ]
